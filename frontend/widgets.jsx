@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Clock from '../frontend/clock.jsx'
-import Tabs from '../frontend/tabs.jsx'
+import Root from '../frontend/root.jsx'
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    console.log(root);
+    // console.log(root);
 
-    ReactDOM.render( <Clock />, <Tabs />, root)
+    ReactDOM.render(<Root />, root);
 });
