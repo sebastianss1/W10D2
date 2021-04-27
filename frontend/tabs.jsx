@@ -7,7 +7,7 @@ class Tabs extends React.Component {
         this.state = {
             currentState: 0,
         }
-        // bind something   
+        this.click = this.click.bind(this); 
     }
 
     
@@ -20,16 +20,24 @@ class Tabs extends React.Component {
                 <header>Tabs</header>
                 <ul>
                     {tabsTitle.map(tab => {
-                        return <li><h1> {tab.title}  </h1></li>
+                        return <li className="tab-title"><h1> {tab.title}  </h1></li>
                     })}
-                    {tabsTitle.map(tab => {
-                        return <li><article> {tab.content}  </article></li>
+                    {tabsTitle.map( (tab, index) => {
+                        return <li className="tab-content" onClick={this.click}><article> {tab.content}  </article></li>
                     })}
                 </ul>
             </div>
         )
     }
+
+    click() {
+        this.setState({
+            currentState: this.props.tabs.index
+        }) 
+        console.log(currentState);
+    }
 }
+
 
 
 export default Tabs;
